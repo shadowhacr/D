@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Fashion</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #001a1a; color: #fff; }
+    .header { background: #002a2a; padding: 1rem 2rem; border-bottom: 1px solid #14b8a620; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 800; color: #14b8a6; letter-spacing: 2px; }
+    .nav { display: flex; gap: 2rem; list-style: none; }
+    .nav a { color: #fff; text-decoration: none; opacity: 0.8; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+    .nav a:hover { color: #2dd4bf; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #001a1a, #002a2a); }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 200; letter-spacing: 5px; margin-bottom: 1rem; text-transform: uppercase; }
+    .hero h1 span { font-weight: 800; color: #2dd4bf; }
+    .hero p { opacity: 0.7; max-width: 400px; margin: 0 auto 2rem; letter-spacing: 1px; }
+    .btn { padding: 1rem 3rem; background: transparent; color: #fff; border: 2px solid #14b8a6; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { background: #14b8a6; }
+    .collection { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .collection h2 { text-align: center; font-size: 2rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 3rem; }
+    .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .item { background: #002a2a; border-radius: 0; overflow: hidden; border: 1px solid #14b8a610; transition: all 0.3s; }
+    .item:hover { border-color: #14b8a640; }
+    .item-img { height: 300px; background: linear-gradient(135deg, #14b8a620, #0d948820); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .item-info { padding: 1.5rem; text-align: center; }
+    .item-info h3 { font-weight: 400; letter-spacing: 1px; margin-bottom: 0.3rem; }
+    .item-info .price { color: #2dd4bf; font-weight: 600; }
+    .about { padding: 4rem 2rem; background: #002a2a; text-align: center; }
+    .about h2 { font-size: 2rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .about p { max-width: 600px; margin: 0 auto; opacity: 0.7; line-height: 1.7; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #14b8a615; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{BRAND_NAME}}</div>
+      <ul class="nav">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#collection" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="collection" id="collection">
+    <h2>{{COLLECTION_TITLE}}</h2>
+    <div class="collection-grid">
+      <div class="item">
+        <div class="item-img">{{ITEM_1_IMAGE}}</div>
+        <div class="item-info">
+          <h3>{{ITEM_1_NAME}}</h3>
+          <div class="price">{{ITEM_1_PRICE}}</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-img">{{ITEM_2_IMAGE}}</div>
+        <div class="item-info">
+          <h3>{{ITEM_2_NAME}}</h3>
+          <div class="price">{{ITEM_2_PRICE}}</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-img">{{ITEM_3_IMAGE}}</div>
+        <div class="item-info">
+          <h3>{{ITEM_3_NAME}}</h3>
+          <div class="price">{{ITEM_3_PRICE}}</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-img">{{ITEM_4_IMAGE}}</div>
+        <div class="item-info">
+          <h3>{{ITEM_4_NAME}}</h3>
+          <div class="price">{{ITEM_4_PRICE}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>{{ABOUT_TITLE}}</h2>
+    <p>{{ABOUT_TEXT}}</p>
+  </section>
+
+  <footer class="footer" id="contact">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND_NAME}}</p>
+  </footer>
+</body>
+</html>

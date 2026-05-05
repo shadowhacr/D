@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Freelancing</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #1a0005; color: #fff; }
+    .hero { min-height: 90vh; display: flex; align-items: center; padding: 4rem; background: linear-gradient(135deg, #1a0005, #2a000a); }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #fb7185; }
+    .hero p { opacity: 0.8; line-height: 1.7; margin-bottom: 2rem; }
+    .btn { padding: 1rem 2rem; background: #f43f5e; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #f43f5e40; }
+    .hero-visual { min-height: 350px; background: #f43f5e10; border-radius: 20px; border: 1px solid #f43f5e20; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .services { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .services h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .service { background: #2a000a; border-radius: 16px; padding: 2rem; border: 1px solid #f43f5e15; transition: all 0.3s; }
+    .service:hover { border-color: #f43f5e40; transform: translateY(-5px); }
+    .service h3 { color: #fb7185; margin-bottom: 0.5rem; }
+    .service p { opacity: 0.7; font-size: 0.9rem; line-height: 1.5; }
+    .price-tag { display: inline-block; margin-top: 1rem; padding: 0.3rem 1rem; background: #f43f5e20; border-radius: 20px; font-size: 0.85rem; color: #fb7185; }
+    .gigs { padding: 4rem 2rem; background: #2a000a; }
+    .gigs h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .gigs-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .gig { background: #1a0005; border-radius: 16px; padding: 2rem; border: 1px solid #f43f5e15; }
+    .gig h3 { color: #fb7185; margin-bottom: 0.5rem; }
+    .gig p { opacity: 0.7; font-size: 0.9rem; margin-bottom: 1rem; }
+    .gig-meta { display: flex; justify-content: space-between; font-size: 0.85rem; }
+    .testimonials { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .testimonials h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .testimonial { background: #2a000a; border-radius: 16px; padding: 2rem; border: 1px solid #f43f5e15; }
+    .testimonial p { font-style: italic; opacity: 0.8; margin-bottom: 1rem; }
+    .testimonial-author { font-weight: 600; color: #fb7185; }
+    .cta { padding: 4rem 2rem; text-align: center; background: #f43f5e; }
+    .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .cta p { opacity: 0.9; margin-bottom: 2rem; }
+    .cta .btn { background: #fff; color: #f43f5e; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #f43f5e15; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+        <p>{{DESCRIPTION}}</p>
+        <a href="#services" class="btn">{{CTA_BUTTON}}</a>
+      </div>
+      <div class="hero-visual">{{HERO_IMAGE}}</div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>{{SERVICES_TITLE}}</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>{{SERVICE_1_NAME}}</h3>
+        <p>{{SERVICE_1_DESC}}</p>
+        <span class="price-tag">{{SERVICE_1_PRICE}}</span>
+      </div>
+      <div class="service">
+        <h3>{{SERVICE_2_NAME}}</h3>
+        <p>{{SERVICE_2_DESC}}</p>
+        <span class="price-tag">{{SERVICE_2_PRICE}}</span>
+      </div>
+      <div class="service">
+        <h3>{{SERVICE_3_NAME}}</h3>
+        <p>{{SERVICE_3_DESC}}</p>
+        <span class="price-tag">{{SERVICE_3_PRICE}}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="gigs">
+    <h2>{{GIGS_TITLE}}</h2>
+    <div class="gigs-grid">
+      <div class="gig">
+        <h3>{{GIG_1_TITLE}}</h3>
+        <p>{{GIG_1_DESC}}</p>
+        <div class="gig-meta"><span>{{GIG_1_DELIVERY}}</span><span>{{GIG_1_PRICE}}</span></div>
+      </div>
+      <div class="gig">
+        <h3>{{GIG_2_TITLE}}</h3>
+        <p>{{GIG_2_DESC}}</p>
+        <div class="gig-meta"><span>{{GIG_2_DELIVERY}}</span><span>{{GIG_2_PRICE}}</span></div>
+      </div>
+      <div class="gig">
+        <h3>{{GIG_3_TITLE}}</h3>
+        <p>{{GIG_3_DESC}}</p>
+        <div class="gig-meta"><span>{{GIG_3_DELIVERY}}</span><span>{{GIG_3_PRICE}}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>{{REVIEWS_TITLE}}</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"{{REVIEW_1_TEXT}}"</p>
+        <div class="testimonial-author">{{REVIEW_1_AUTHOR}}</div>
+      </div>
+      <div class="testimonial">
+        <p>"{{REVIEW_2_TEXT}}"</p>
+        <div class="testimonial-author">{{REVIEW_2_AUTHOR}}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>{{CTA_TITLE}}</h2>
+    <p>{{CTA_DESC}}</p>
+    <a href="mailto:{{CONTACT_EMAIL}}" class="btn">{{CTA_BUTTON}}</a>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND}}</p>
+  </footer>
+</body>
+</html>

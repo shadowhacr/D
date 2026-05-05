@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #1a0010; color: #fff; }
+    .sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 300px; background: #2a001a; border-right: 1px solid #ec489920; padding: 3rem 2rem; display: flex; flex-direction: column; z-index: 100; }
+    .profile { text-align: center; margin-bottom: 2rem; }
+    .profile-img { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #db2777); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .profile h2 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .profile p { opacity: 0.6; font-size: 0.9rem; }
+    .nav { list-style: none; }
+    .nav li { margin-bottom: 0.5rem; }
+    .nav a { display: block; padding: 0.8rem 1rem; color: #fff; text-decoration: none; border-radius: 10px; transition: all 0.3s; opacity: 0.8; }
+    .nav a:hover, .nav a.active { background: #ec489920; opacity: 1; color: #f472b6; }
+    .main { margin-left: 300px; }
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 4rem; background: linear-gradient(45deg, #1a0010, #2a001a); }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #ec4899; }
+    .hero p { font-size: 1.1rem; opacity: 0.8; max-width: 500px; line-height: 1.7; margin-bottom: 2rem; }
+    .social { display: flex; gap: 1rem; }
+    .social a { width: 45px; height: 45px; border-radius: 12px; background: #ec489920; display: flex; align-items: center; justify-content: center; color: #f472b6; text-decoration: none; font-size: 1.2rem; transition: all 0.3s; }
+    .social a:hover { background: #ec4899; color: #fff; }
+    .section { padding: 4rem; }
+    .section h2 { font-size: 2rem; margin-bottom: 2rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .project { background: #2a001a; border-radius: 16px; overflow: hidden; border: 1px solid #ec489915; transition: all 0.3s; }
+    .project:hover { transform: translateY(-5px); border-color: #ec489940; }
+    .project-img { height: 200px; background: linear-gradient(135deg, #ec4899, #db2777); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .project-info { padding: 1.5rem; }
+    .project-info h3 { margin-bottom: 0.5rem; color: #f472b6; }
+    .project-info p { opacity: 0.7; font-size: 0.9rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .skill { padding: 0.5rem 1rem; background: #ec489915; border: 1px solid #ec489930; border-radius: 20px; font-size: 0.85rem; color: #f472b6; }
+    .contact-form { max-width: 600px; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; opacity: 0.8; }
+    .form-group input, .form-group textarea { width: 100%; padding: 1rem; background: #2a001a; border: 1px solid #ec489920; border-radius: 10px; color: #fff; font-size: 1rem; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #ec4899; }
+    .btn { padding: 1rem 2rem; background: #ec4899; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #ec489940; }
+    .footer { padding: 2rem 4rem; text-align: center; border-top: 1px solid #ec489915; opacity: 0.5; }
+    @media (max-width: 768px) { .sidebar { width: 100%; position: relative; } .main { margin-left: 0; } }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="profile">
+      <div class="profile-img">{{PROFILE_IMAGE}}</div>
+      <h2>{{NAME}}</h2>
+      <p>{{TITLE}}</p>
+    </div>
+    <ul class="nav">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <section class="hero" id="home">
+      <div>
+        <h1>Hi, I'm <span>{{NAME}}</span></h1>
+        <p>{{BIO}}</p>
+        <div class="social">
+          <a href="{{GITHUB_URL}}">GH</a>
+          <a href="{{LINKEDIN_URL}}">LI</a>
+          <a href="{{TWITTER_URL}}">TW</a>
+          <a href="{{EMAIL}}">@</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-img">{{PROJECT_1_IMAGE}}</div>
+          <div class="project-info">
+            <h3>{{PROJECT_1_NAME}}</h3>
+            <p>{{PROJECT_1_DESC}}</p>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-img">{{PROJECT_2_IMAGE}}</div>
+          <div class="project-info">
+            <h3>{{PROJECT_2_NAME}}</h3>
+            <p>{{PROJECT_2_DESC}}</p>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-img">{{PROJECT_3_IMAGE}}</div>
+          <div class="project-info">
+            <h3>{{PROJECT_3_NAME}}</h3>
+            <p>{{PROJECT_3_DESC}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">{{SKILL_1}}</span>
+        <span class="skill">{{SKILL_2}}</span>
+        <span class="skill">{{SKILL_3}}</span>
+        <span class="skill">{{SKILL_4}}</span>
+        <span class="skill">{{SKILL_5}}</span>
+        <span class="skill">{{SKILL_6}}</span>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Get In Touch</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Your message..."></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; {{YEAR}} {{NAME}}. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>

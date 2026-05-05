@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Fun</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #1a0010; color: #fff; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, #1a0010, #2a001a, #1a0010); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, #ec489920, transparent); top: 10%; left: 10%; border-radius: 50%; animation: float 6s ease-in-out infinite; }
+    .hero::after { content: ''; position: absolute; width: 200px; height: 200px; background: radial-gradient(circle, #f472b620, transparent); bottom: 10%; right: 10%; border-radius: 50%; animation: float 8s ease-in-out infinite reverse; }
+    @keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,-30px); } }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; margin-bottom: 1rem; }
+    .hero h1 span { background: linear-gradient(135deg, #ec4899, #f472b6, #db2777); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; }
+    .btn { padding: 1rem 2.5rem; background: #ec4899; color: #fff; border: none; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: scale(1.1) rotate(-2deg); box-shadow: 0 10px 30px #ec489950; }
+    .fun-section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+    .fun-section h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .fun-box { background: #2a001a; border-radius: 24px; padding: 3rem; border: 1px solid #ec489920; margin-top: 2rem; }
+    .joke-box { font-size: 1.3rem; line-height: 1.6; padding: 2rem; background: #1a0010; border-radius: 16px; margin-bottom: 1.5rem; }
+    .emoji-rain { font-size: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 2rem 0; }
+    .emoji { animation: bounce 1s ease infinite; }
+    .emoji:nth-child(2n) { animation-delay: 0.2s; }
+    .emoji:nth-child(3n) { animation-delay: 0.4s; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    .facts { padding: 4rem 2rem; background: #2a001a; }
+    .facts h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .fact-grid { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .fact { padding: 1.5rem; background: #1a0010; border-radius: 16px; border: 1px solid #ec489915; }
+    .fact-num { font-size: 2rem; font-weight: 800; color: #f472b6; }
+    .fact p { opacity: 0.7; margin-top: 0.5rem; }
+    .quiz { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; }
+    .quiz h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .quiz-card { background: #2a001a; border-radius: 20px; padding: 2rem; border: 1px solid #ec489915; }
+    .quiz-question { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .quiz-options { display: grid; gap: 0.8rem; }
+    .quiz-option { padding: 1rem; background: #1a0010; border: 1px solid #ec489920; border-radius: 12px; cursor: pointer; transition: all 0.3s; }
+    .quiz-option:hover { background: #ec489920; border-color: #ec4899; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #ec489915; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#fun" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="fun-section" id="fun">
+    <h2>{{SECTION_TITLE}}</h2>
+    <div class="fun-box">
+      <div class="emoji-rain">
+        <span class="emoji">{{EMOJI_1}}</span>
+        <span class="emoji">{{EMOJI_2}}</span>
+        <span class="emoji">{{EMOJI_3}}</span>
+        <span class="emoji">{{EMOJI_4}}</span>
+        <span class="emoji">{{EMOJI_5}}</span>
+        <span class="emoji">{{EMOJI_6}}</span>
+      </div>
+      <div class="joke-box">{{JOKE_OR_CONTENT}}</div>
+      <button class="btn">{{ACTION_BUTTON}}</button>
+    </div>
+  </section>
+
+  <section class="facts">
+    <h2>{{FACTS_TITLE}}</h2>
+    <div class="fact-grid">
+      <div class="fact">
+        <div class="fact-num">{{FACT_1_NUM}}</div>
+        <p>{{FACT_1_TEXT}}</p>
+      </div>
+      <div class="fact">
+        <div class="fact-num">{{FACT_2_NUM}}</div>
+        <p>{{FACT_2_TEXT}}</p>
+      </div>
+      <div class="fact">
+        <div class="fact-num">{{FACT_3_NUM}}</div>
+        <p>{{FACT_3_TEXT}}</p>
+      </div>
+      <div class="fact">
+        <div class="fact-num">{{FACT_4_NUM}}</div>
+        <p>{{FACT_4_TEXT}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz">
+    <h2>{{QUIZ_TITLE}}</h2>
+    <div class="quiz-card">
+      <div class="quiz-question">{{QUIZ_QUESTION}}</div>
+      <div class="quiz-options">
+        <div class="quiz-option">{{OPTION_1}}</div>
+        <div class="quiz-option">{{OPTION_2}}</div>
+        <div class="quiz-option">{{OPTION_3}}</div>
+        <div class="quiz-option">{{OPTION_4}}</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND}}</p>
+  </footer>
+</body>
+</html>

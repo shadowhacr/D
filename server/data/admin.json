@@ -1,0 +1,31 @@
+{
+  "password": "SHADOW",
+  "theme": {
+    "primaryColor": "#6366f1",
+    "secondaryColor": "#8b5cf6",
+    "accentColor": "#06b6d4",
+    "backgroundColor": "#0f0f23",
+    "cardColor": "#1a1a2e",
+    "textColor": "#ffffff",
+    "title": "Template Builder Platform",
+    "logo": null,
+    "favicon": null
+  },
+  "maintenanceMode": false,
+  "maintenanceMessage": "Website is under maintenance. Please check back later.",
+  "contact": {
+    "whatsapp": "+1234567890",
+    "telegram": "@admin",
+    "email": "admin@templatebuilder.com"
+  },
+  "limits": {
+    "freeDeploysPerDay": 2,
+    "creditCostPerDeploy": 1
+  },
+  "analytics": {
+    "totalUsers": 0,
+    "totalDeployments": 0,
+    "totalTemplates": 1000,
+    "activeUsers": 0
+  }
+}

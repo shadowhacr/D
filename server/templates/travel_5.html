@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Travel</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #001020; color: #fff; }
+    .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #001020, #001a30); position: relative; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at bottom, #3b82f615, transparent); }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #60a5fa; }
+    .hero p { font-size: 1.1rem; opacity: 0.8; max-width: 550px; margin: 0 auto 2rem; }
+    .btn { padding: 1rem 2.5rem; background: #3b82f6; color: #fff; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px #3b82f640; }
+    .destinations { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .destinations h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    .dest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .dest { position: relative; border-radius: 20px; overflow: hidden; height: 350px; border: 1px solid #3b82f615; transition: all 0.3s; }
+    .dest:hover { transform: scale(1.03); }
+    .dest-img { position: absolute; inset: 0; background: linear-gradient(135deg, #3b82f640, #2563eb40); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .dest-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+    .dest-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; }
+    .dest-info h3 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .dest-info p { opacity: 0.8; font-size: 0.9rem; }
+    .dest-price { position: absolute; top: 1rem; right: 1rem; padding: 0.5rem 1rem; background: #3b82f6; border-radius: 20px; font-weight: 700; }
+    .packages { padding: 4rem 2rem; background: #001a30; }
+    .packages h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .packages-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .package { background: #001020; border-radius: 16px; padding: 2rem; border: 1px solid #3b82f615; text-align: center; }
+    .package h3 { color: #60a5fa; margin-bottom: 0.5rem; }
+    .package .price { font-size: 2rem; font-weight: 800; color: #3b82f6; margin: 1rem 0; }
+    .package ul { list-style: none; margin: 1rem 0; }
+    .package ul li { padding: 0.5rem 0; opacity: 0.7; }
+    .testimonials { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+    .testimonials h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .testimonial { background: #001a30; border-radius: 16px; padding: 2rem; border: 1px solid #3b82f615; margin-bottom: 1.5rem; }
+    .testimonial p { font-style: italic; opacity: 0.8; margin-bottom: 1rem; }
+    .testimonial-author { font-weight: 600; color: #60a5fa; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #3b82f615; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#destinations" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="destinations" id="destinations">
+    <h2>{{DESTINATIONS_TITLE}}</h2>
+    <div class="dest-grid">
+      <div class="dest">
+        <div class="dest-img">{{DEST_1_IMAGE}}</div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <h3>{{DEST_1_NAME}}</h3>
+          <p>{{DEST_1_DESC}}</p>
+        </div>
+        <div class="dest-price">{{DEST_1_PRICE}}</div>
+      </div>
+      <div class="dest">
+        <div class="dest-img">{{DEST_2_IMAGE}}</div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <h3>{{DEST_2_NAME}}</h3>
+          <p>{{DEST_2_DESC}}</p>
+        </div>
+        <div class="dest-price">{{DEST_2_PRICE}}</div>
+      </div>
+      <div class="dest">
+        <div class="dest-img">{{DEST_3_IMAGE}}</div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <h3>{{DEST_3_NAME}}</h3>
+          <p>{{DEST_3_DESC}}</p>
+        </div>
+        <div class="dest-price">{{DEST_3_PRICE}}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages">
+    <h2>{{PACKAGES_TITLE}}</h2>
+    <div class="packages-grid">
+      <div class="package">
+        <h3>{{PKG_1_NAME}}</h3>
+        <div class="price">{{PKG_1_PRICE}}</div>
+        <ul>
+          <li>{{PKG_1_FEATURE_1}}</li>
+          <li>{{PKG_1_FEATURE_2}}</li>
+          <li>{{PKG_1_FEATURE_3}}</li>
+        </ul>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+      <div class="package">
+        <h3>{{PKG_2_NAME}}</h3>
+        <div class="price">{{PKG_2_PRICE}}</div>
+        <ul>
+          <li>{{PKG_2_FEATURE_1}}</li>
+          <li>{{PKG_2_FEATURE_2}}</li>
+          <li>{{PKG_2_FEATURE_3}}</li>
+        </ul>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>{{REVIEWS_TITLE}}</h2>
+    <div class="testimonial">
+      <p>"{{REVIEW_1_TEXT}}"</p>
+      <div class="testimonial-author">{{REVIEW_1_AUTHOR}}</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND}}</p>
+  </footer>
+</body>
+</html>

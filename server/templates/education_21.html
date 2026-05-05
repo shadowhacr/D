@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Education</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f23; color: #fff; }
+    .header { background: #1a1a2e; padding: 1rem 2rem; border-bottom: 1px solid #6366f120; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.6rem; font-weight: 800; color: #6366f1; }
+    .nav { display: flex; gap: 2rem; list-style: none; }
+    .nav a { color: #fff; text-decoration: none; opacity: 0.8; }
+    .nav a:hover { color: #06b6d4; }
+    .hero { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, #0f0f23, #1a1a2e); }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #06b6d4; }
+    .hero p { opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; }
+    .btn { padding: 1rem 2rem; background: #6366f1; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #6366f140; }
+    .courses { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .courses h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .course { background: #1a1a2e; border-radius: 16px; padding: 2rem; border: 1px solid #6366f115; transition: all 0.3s; }
+    .course:hover { border-color: #6366f140; transform: translateY(-5px); }
+    .course-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .course h3 { color: #06b6d4; margin-bottom: 0.5rem; }
+    .course p { opacity: 0.7; font-size: 0.9rem; margin-bottom: 1rem; }
+    .course-meta { display: flex; justify-content: space-between; font-size: 0.85rem; opacity: 0.6; }
+    .stats { padding: 3rem 2rem; background: #1a1a2e; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2.5rem; font-weight: 800; color: #06b6d4; }
+    .stat-label { opacity: 0.6; }
+    .instructors { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .instructors h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .instructor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .instructor { text-align: center; padding: 1.5rem; }
+    .instructor-img { width: 80px; height: 80px; border-radius: 50%; background: #6366f1; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; }
+    .instructor h4 { color: #06b6d4; }
+    .instructor p { opacity: 0.6; font-size: 0.85rem; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #6366f115; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{ACADEMY_NAME}}</div>
+      <ul class="nav">
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#instructors">Instructors</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+    <p>{{DESCRIPTION}}</p>
+    <a href="#courses" class="btn">{{CTA_BUTTON}}</a>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><div class="stat-num">{{STAT_1_VALUE}}</div><div class="stat-label">{{STAT_1_LABEL}}</div></div>
+    <div class="stat"><div class="stat-num">{{STAT_2_VALUE}}</div><div class="stat-label">{{STAT_2_LABEL}}</div></div>
+    <div class="stat"><div class="stat-num">{{STAT_3_VALUE}}</div><div class="stat-label">{{STAT_3_LABEL}}</div></div>
+  </section>
+
+  <section class="courses" id="courses">
+    <h2>{{COURSES_TITLE}}</h2>
+    <div class="courses-grid">
+      <div class="course">
+        <div class="course-icon">{{COURSE_1_ICON}}</div>
+        <h3>{{COURSE_1_NAME}}</h3>
+        <p>{{COURSE_1_DESC}}</p>
+        <div class="course-meta"><span>{{COURSE_1_DURATION}}</span><span>{{COURSE_1_LEVEL}}</span></div>
+      </div>
+      <div class="course">
+        <div class="course-icon">{{COURSE_2_ICON}}</div>
+        <h3>{{COURSE_2_NAME}}</h3>
+        <p>{{COURSE_2_DESC}}</p>
+        <div class="course-meta"><span>{{COURSE_2_DURATION}}</span><span>{{COURSE_2_LEVEL}}</span></div>
+      </div>
+      <div class="course">
+        <div class="course-icon">{{COURSE_3_ICON}}</div>
+        <h3>{{COURSE_3_NAME}}</h3>
+        <p>{{COURSE_3_DESC}}</p>
+        <div class="course-meta"><span>{{COURSE_3_DURATION}}</span><span>{{COURSE_3_LEVEL}}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="instructors" id="instructors">
+    <h2>{{INSTRUCTORS_TITLE}}</h2>
+    <div class="instructor-grid">
+      <div class="instructor">
+        <div class="instructor-img">{{INSTRUCTOR_1_IMAGE}}</div>
+        <h4>{{INSTRUCTOR_1_NAME}}</h4>
+        <p>{{INSTRUCTOR_1_ROLE}}</p>
+      </div>
+      <div class="instructor">
+        <div class="instructor-img">{{INSTRUCTOR_2_IMAGE}}</div>
+        <h4>{{INSTRUCTOR_2_NAME}}</h4>
+        <p>{{INSTRUCTOR_2_ROLE}}</p>
+      </div>
+      <div class="instructor">
+        <div class="instructor-img">{{INSTRUCTOR_3_IMAGE}}</div>
+        <h4>{{INSTRUCTOR_3_NAME}}</h4>
+        <p>{{INSTRUCTOR_3_ROLE}}</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{ACADEMY_NAME}}</p>
+  </footer>
+</body>
+</html>

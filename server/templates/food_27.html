@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Food & Restaurant</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #001a1a; color: #fff; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #001a1a, #002a2a); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #14b8a615, transparent 60%); }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #2dd4bf; }
+    .hero p { opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+    .btn { padding: 1rem 2.5rem; background: #14b8a6; color: #fff; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px #14b8a640; }
+    .menu { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .menu h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .menu-item { background: #002a2a; border-radius: 20px; overflow: hidden; border: 1px solid #14b8a615; transition: all 0.3s; }
+    .menu-item:hover { transform: scale(1.03); }
+    .menu-img { height: 200px; background: linear-gradient(135deg, #14b8a630, #0d948830); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .menu-info { padding: 1.5rem; }
+    .menu-info h3 { color: #2dd4bf; margin-bottom: 0.3rem; }
+    .menu-info p { opacity: 0.6; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .menu-price { font-size: 1.3rem; font-weight: 700; color: #14b8a6; }
+    .about { padding: 4rem 2rem; background: #002a2a; }
+    .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .about h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    .about p { opacity: 0.8; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+    .hours { padding: 3rem 2rem; max-width: 600px; margin: 0 auto; }
+    .hours h2 { text-align: center; font-size: 2rem; margin-bottom: 1.5rem; }
+    .hours-list { background: #002a2a; border-radius: 16px; padding: 1.5rem; }
+    .hours-row { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #14b8a610; }
+    .hours-row:last-child { border-bottom: none; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #14b8a615; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#menu" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <h2>{{MENU_TITLE}}</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-img">{{ITEM_1_IMAGE}}</div>
+        <div class="menu-info">
+          <h3>{{ITEM_1_NAME}}</h3>
+          <p>{{ITEM_1_DESC}}</p>
+          <div class="menu-price">{{ITEM_1_PRICE}}</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img">{{ITEM_2_IMAGE}}</div>
+        <div class="menu-info">
+          <h3>{{ITEM_2_NAME}}</h3>
+          <p>{{ITEM_2_DESC}}</p>
+          <div class="menu-price">{{ITEM_2_PRICE}}</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img">{{ITEM_3_IMAGE}}</div>
+        <div class="menu-info">
+          <h3>{{ITEM_3_NAME}}</h3>
+          <p>{{ITEM_3_DESC}}</p>
+          <div class="menu-price">{{ITEM_3_PRICE}}</div>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img">{{ITEM_4_IMAGE}}</div>
+        <div class="menu-info">
+          <h3>{{ITEM_4_NAME}}</h3>
+          <p>{{ITEM_4_DESC}}</p>
+          <div class="menu-price">{{ITEM_4_PRICE}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-inner">
+      <h2>{{ABOUT_TITLE}}</h2>
+      <p>{{ABOUT_TEXT}}</p>
+    </div>
+  </section>
+
+  <section class="hours">
+    <h2>{{HOURS_TITLE}}</h2>
+    <div class="hours-list">
+      <div class="hours-row"><span>Monday - Friday</span><span>{{WEEKDAY_HOURS}}</span></div>
+      <div class="hours-row"><span>Saturday</span><span>{{SATURDAY_HOURS}}</span></div>
+      <div class="hours-row"><span>Sunday</span><span>{{SUNDAY_HOURS}}</span></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | {{RESTAURANT_NAME}} &copy; {{YEAR}}</p>
+  </footer>
+</body>
+</html>

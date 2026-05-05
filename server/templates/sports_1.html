@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Sports</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f23; color: #fff; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #0f0f23, #1a1a2e); }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
+    .hero h1 span { color: #06b6d4; }
+    .hero p { font-size: 1.1rem; opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; }
+    .btn { padding: 1rem 2.5rem; background: #6366f1; color: #fff; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; text-transform: uppercase; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px #6366f140; }
+    .matches { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+    .matches h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; }
+    .match { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; background: #1a1a2e; border-radius: 16px; margin-bottom: 1rem; border: 1px solid #6366f115; }
+    .team { display: flex; align-items: center; gap: 1rem; }
+    .team-logo { width: 50px; height: 50px; background: #6366f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .vs { font-size: 1.2rem; font-weight: 800; color: #06b6d4; }
+    .match-time { text-align: center; }
+    .match-time .date { opacity: 0.6; font-size: 0.85rem; }
+    .match-time .league { color: #06b6d4; font-size: 0.8rem; }
+    .standings { padding: 4rem 2rem; background: #1a1a2e; }
+    .standings h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .standings-table { max-width: 700px; margin: 0 auto; }
+    .table-row { display: grid; grid-template-columns: 50px 1fr 80px 80px 80px; padding: 1rem; border-bottom: 1px solid #6366f110; align-items: center; }
+    .table-row.header { font-weight: 600; opacity: 0.6; font-size: 0.85rem; text-transform: uppercase; }
+    .table-row .pos { text-align: center; }
+    .table-row .team-name { font-weight: 600; }
+    .table-row .pts { font-weight: 700; color: #06b6d4; }
+    .news { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    .news h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .news-card { background: #1a1a2e; border-radius: 16px; overflow: hidden; border: 1px solid #6366f115; }
+    .news-img { height: 180px; background: linear-gradient(135deg, #6366f130, #06b6d430); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .news-info { padding: 1.5rem; }
+    .news-info h3 { color: #06b6d4; margin-bottom: 0.5rem; font-size: 1rem; }
+    .news-info p { opacity: 0.6; font-size: 0.9rem; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #6366f115; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div>
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#matches" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="matches" id="matches">
+    <h2>{{MATCHES_TITLE}}</h2>
+    <div class="match">
+      <div class="team">
+        <div class="team-logo">{{TEAM_1_ABBR}}</div>
+        <span>{{TEAM_1_NAME}}</span>
+      </div>
+      <div class="match-time">
+        <div class="vs">VS</div>
+        <div class="date">{{MATCH_1_DATE}}</div>
+        <div class="league">{{MATCH_1_LEAGUE}}</div>
+      </div>
+      <div class="team">
+        <span>{{TEAM_2_NAME}}</span>
+        <div class="team-logo">{{TEAM_2_ABBR}}</div>
+      </div>
+    </div>
+    <div class="match">
+      <div class="team">
+        <div class="team-logo">{{TEAM_3_ABBR}}</div>
+        <span>{{TEAM_3_NAME}}</span>
+      </div>
+      <div class="match-time">
+        <div class="vs">VS</div>
+        <div class="date">{{MATCH_2_DATE}}</div>
+        <div class="league">{{MATCH_2_LEAGUE}}</div>
+      </div>
+      <div class="team">
+        <span>{{TEAM_4_NAME}}</span>
+        <div class="team-logo">{{TEAM_4_ABBR}}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="standings">
+    <h2>{{STANDINGS_TITLE}}</h2>
+    <div class="standings-table">
+      <div class="table-row header">
+        <span class="pos">#</span>
+        <span class="team-name">Team</span>
+        <span>P</span>
+        <span>W</span>
+        <span class="pts">Pts</span>
+      </div>
+      <div class="table-row">
+        <span class="pos">1</span>
+        <span class="team-name">{{STAND_1_TEAM}}</span>
+        <span>{{STAND_1_P}}</span>
+        <span>{{STAND_1_W}}</span>
+        <span class="pts">{{STAND_1_PTS}}</span>
+      </div>
+      <div class="table-row">
+        <span class="pos">2</span>
+        <span class="team-name">{{STAND_2_TEAM}}</span>
+        <span>{{STAND_2_P}}</span>
+        <span>{{STAND_2_W}}</span>
+        <span class="pts">{{STAND_2_PTS}}</span>
+      </div>
+      <div class="table-row">
+        <span class="pos">3</span>
+        <span class="team-name">{{STAND_3_TEAM}}</span>
+        <span>{{STAND_3_P}}</span>
+        <span>{{STAND_3_W}}</span>
+        <span class="pts">{{STAND_3_PTS}}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <h2>{{NEWS_TITLE}}</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-img">{{NEWS_1_IMAGE}}</div>
+        <div class="news-info">
+          <h3>{{NEWS_1_HEADLINE}}</h3>
+          <p>{{NEWS_1_SUMMARY}}</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-img">{{NEWS_2_IMAGE}}</div>
+        <div class="news-info">
+          <h3>{{NEWS_2_HEADLINE}}</h3>
+          <p>{{NEWS_2_SUMMARY}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND}}</p>
+  </footer>
+</body>
+</html>

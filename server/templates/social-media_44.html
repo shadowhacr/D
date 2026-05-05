@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Social Media</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #1a0010; color: #fff; }
+    .header { background: #2a001a; padding: 1rem 2rem; border-bottom: 1px solid #ec489920; }
+    .header-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 800; color: #ec4899; }
+    .header-actions { display: flex; gap: 1rem; }
+    .icon-btn { width: 40px; height: 40px; border-radius: 50%; background: #ec489915; border: none; color: #f472b6; cursor: pointer; font-size: 1.2rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .profile-header { background: #2a001a; border-radius: 20px; padding: 2rem; margin-bottom: 2rem; border: 1px solid #ec489915; }
+    .profile-cover { height: 150px; background: linear-gradient(135deg, #ec4899, #db2777); border-radius: 16px; margin-bottom: -50px; }
+    .profile-info { display: flex; align-items: flex-end; gap: 1.5rem; padding: 0 1rem; }
+    .profile-avatar { width: 100px; height: 100px; border-radius: 50%; background: #f472b6; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 4px solid #2a001a; }
+    .profile-details h2 { font-size: 1.5rem; margin-bottom: 0.2rem; }
+    .profile-details p { opacity: 0.6; font-size: 0.9rem; }
+    .profile-stats { display: flex; gap: 2rem; margin-top: 1.5rem; padding: 1rem; border-top: 1px solid #ec489915; }
+    .stat { text-align: center; }
+    .stat-value { font-weight: 700; color: #f472b6; }
+    .stat-label { font-size: 0.8rem; opacity: 0.6; }
+    .post { background: #2a001a; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #ec489915; }
+    .post-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .post-avatar { width: 45px; height: 45px; border-radius: 50%; background: #ec4899; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .post-meta h4 { font-size: 1rem; }
+    .post-meta span { font-size: 0.8rem; opacity: 0.5; }
+    .post-content { margin-bottom: 1rem; line-height: 1.6; }
+    .post-image { width: 100%; height: 300px; background: linear-gradient(135deg, #ec489930, #db277730); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin-bottom: 1rem; }
+    .post-actions { display: flex; gap: 1.5rem; padding-top: 1rem; border-top: 1px solid #ec489910; }
+    .post-action { display: flex; align-items: center; gap: 0.5rem; opacity: 0.6; cursor: pointer; transition: all 0.3s; }
+    .post-action:hover { opacity: 1; color: #f472b6; }
+    .trending { margin-top: 2rem; }
+    .trending h3 { margin-bottom: 1rem; color: #f472b6; }
+    .trending-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .tag { padding: 0.5rem 1rem; background: #ec489915; border: 1px solid #ec489930; border-radius: 20px; font-size: 0.85rem; color: #f472b6; cursor: pointer; transition: all 0.3s; }
+    .tag:hover { background: #ec489930; }
+    @media (max-width: 768px) { .profile-info { flex-direction: column; align-items: center; text-align: center; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{PLATFORM_NAME}}</div>
+      <div class="header-actions">
+        <button class="icon-btn">&#128269;</button>
+        <button class="icon-btn">&#128276;</button>
+        <button class="icon-btn">&#9993;</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="profile-header">
+      <div class="profile-cover"></div>
+      <div class="profile-info">
+        <div class="profile-avatar">{{PROFILE_AVATAR}}</div>
+        <div class="profile-details">
+          <h2>{{PROFILE_NAME}}</h2>
+          <p>@{{USERNAME}}</p>
+        </div>
+      </div>
+      <div class="profile-stats">
+        <div class="stat"><div class="stat-value">{{FOLLOWERS}}</div><div class="stat-label">Followers</div></div>
+        <div class="stat"><div class="stat-value">{{FOLLOWING}}</div><div class="stat-label">Following</div></div>
+        <div class="stat"><div class="stat-value">{{POSTS}}</div><div class="stat-label">Posts</div></div>
+        <div class="stat"><div class="stat-value">{{LIKES}}</div><div class="stat-label">Likes</div></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">{{POST_1_AVATAR}}</div>
+        <div class="post-meta">
+          <h4>{{POST_1_AUTHOR}}</h4>
+          <span>{{POST_1_TIME}}</span>
+        </div>
+      </div>
+      <p class="post-content">{{POST_1_CONTENT}}</p>
+      <div class="post-image">{{POST_1_IMAGE}}</div>
+      <div class="post-actions">
+        <span class="post-action">&#10084; {{POST_1_LIKES}}</span>
+        <span class="post-action">&#128172; {{POST_1_COMMENTS}}</span>
+        <span class="post-action">&#9851; {{POST_1_SHARES}}</span>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">{{POST_2_AVATAR}}</div>
+        <div class="post-meta">
+          <h4>{{POST_2_AUTHOR}}</h4>
+          <span>{{POST_2_TIME}}</span>
+        </div>
+      </div>
+      <p class="post-content">{{POST_2_CONTENT}}</p>
+      <div class="post-image">{{POST_2_IMAGE}}</div>
+      <div class="post-actions">
+        <span class="post-action">&#10084; {{POST_2_LIKES}}</span>
+        <span class="post-action">&#128172; {{POST_2_COMMENTS}}</span>
+        <span class="post-action">&#9851; {{POST_2_SHARES}}</span>
+      </div>
+    </div>
+
+    <div class="trending">
+      <h3>Trending Topics</h3>
+      <div class="trending-tags">
+        <span class="tag">{{TAG_1}}</span>
+        <span class="tag">{{TAG_2}}</span>
+        <span class="tag">{{TAG_3}}</span>
+        <span class="tag">{{TAG_4}}</span>
+        <span class="tag">{{TAG_5}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

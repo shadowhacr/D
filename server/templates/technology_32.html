@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Technology</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0a1a; color: #fff; }
+    .header { background: #12122a; padding: 1rem 2rem; border-bottom: 1px solid #6366f120; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 800; color: #6366f1; }
+    .nav { display: flex; gap: 2rem; list-style: none; }
+    .nav a { color: #fff; text-decoration: none; opacity: 0.8; }
+    .nav a:hover { color: #818cf8; }
+    .hero { min-height: 90vh; display: flex; align-items: center; padding: 4rem; background: linear-gradient(135deg, #0a0a1a, #12122a); }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #818cf8; }
+    .hero p { opacity: 0.8; line-height: 1.7; margin-bottom: 2rem; }
+    .btn { padding: 1rem 2rem; background: #6366f1; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #6366f140; }
+    .hero-visual { min-height: 350px; background: #6366f110; border-radius: 20px; border: 1px solid #6366f120; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .features { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .feature { background: #12122a; border-radius: 16px; padding: 2rem; border: 1px solid #6366f115; transition: all 0.3s; }
+    .feature:hover { border-color: #6366f140; transform: translateY(-5px); }
+    .feature h3 { color: #818cf8; margin-bottom: 0.5rem; }
+    .feature p { opacity: 0.7; line-height: 1.5; }
+    .products { padding: 4rem 2rem; background: #12122a; }
+    .products h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .products-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .product { background: #0a0a1a; border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid #6366f115; }
+    .product-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .product h3 { color: #818cf8; margin-bottom: 0.5rem; }
+    .product p { opacity: 0.6; font-size: 0.9rem; }
+    .integrations { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+    .integrations h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .integrations-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .integration { padding: 0.8rem 1.5rem; background: #12122a; border-radius: 10px; border: 1px solid #6366f120; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #6366f115; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{COMPANY_NAME}}</div>
+      <ul class="nav">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#integrations">Integrations</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+        <p>{{DESCRIPTION}}</p>
+        <a href="#features" class="btn">{{CTA_BUTTON}}</a>
+      </div>
+      <div class="hero-visual">{{HERO_IMAGE}}</div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2>{{FEATURES_TITLE}}</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>{{FEATURE_1_TITLE}}</h3>
+        <p>{{FEATURE_1_DESC}}</p>
+      </div>
+      <div class="feature">
+        <h3>{{FEATURE_2_TITLE}}</h3>
+        <p>{{FEATURE_2_DESC}}</p>
+      </div>
+      <div class="feature">
+        <h3>{{FEATURE_3_TITLE}}</h3>
+        <p>{{FEATURE_3_DESC}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <h2>{{PRODUCTS_TITLE}}</h2>
+    <div class="products-grid">
+      <div class="product">
+        <div class="product-icon">{{PRODUCT_1_ICON}}</div>
+        <h3>{{PRODUCT_1_NAME}}</h3>
+        <p>{{PRODUCT_1_DESC}}</p>
+      </div>
+      <div class="product">
+        <div class="product-icon">{{PRODUCT_2_ICON}}</div>
+        <h3>{{PRODUCT_2_NAME}}</h3>
+        <p>{{PRODUCT_2_DESC}}</p>
+      </div>
+      <div class="product">
+        <div class="product-icon">{{PRODUCT_3_ICON}}</div>
+        <h3>{{PRODUCT_3_NAME}}</h3>
+        <p>{{PRODUCT_3_DESC}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="integrations" id="integrations">
+    <h2>{{INTEGRATIONS_TITLE}}</h2>
+    <div class="integrations-grid">
+      <span class="integration">{{INTEGRATION_1}}</span>
+      <span class="integration">{{INTEGRATION_2}}</span>
+      <span class="integration">{{INTEGRATION_3}}</span>
+      <span class="integration">{{INTEGRATION_4}}</span>
+      <span class="integration">{{INTEGRATION_5}}</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{COMPANY_NAME}}</p>
+  </footer>
+</body>
+</html>

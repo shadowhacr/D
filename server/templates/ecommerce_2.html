@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Shop</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #1a1000; color: #fff; }
+    .header { background: #2a1a00; padding: 1rem 2rem; border-bottom: 1px solid #f59e0b20; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 800; color: #f59e0b; }
+    .nav { display: flex; gap: 2rem; list-style: none; }
+    .nav a { color: #fff; text-decoration: none; opacity: 0.8; transition: all 0.3s; }
+    .nav a:hover { color: #f97316; }
+    .cart-btn { padding: 0.5rem 1.2rem; background: #f59e0b; border-radius: 8px; color: #fff; border: none; cursor: pointer; font-weight: 600; }
+    .hero { padding: 4rem 2rem; background: linear-gradient(135deg, #1a1000, #2a1a00); text-align: center; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #f97316; }
+    .hero p { opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; }
+    .btn { display: inline-block; padding: 1rem 2rem; background: #f59e0b; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #f59e0b40; }
+    .products { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .products h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+    .product { background: #2a1a00; border-radius: 16px; overflow: hidden; border: 1px solid #f59e0b15; transition: all 0.3s; }
+    .product:hover { transform: translateY(-5px); border-color: #f59e0b40; }
+    .product-img { height: 220px; background: linear-gradient(135deg, #f59e0b30, #ef444430); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .product-info { padding: 1.5rem; }
+    .product-info h3 { margin-bottom: 0.5rem; }
+    .product-info .price { font-size: 1.3rem; font-weight: 700; color: #f97316; margin-bottom: 1rem; }
+    .add-cart { width: 100%; padding: 0.8rem; background: #f59e0b; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .add-cart:hover { background: #ef4444; }
+    .categories { padding: 3rem 2rem; background: #2a1a00; }
+    .categories h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .cat-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 900px; margin: 0 auto; }
+    .cat { padding: 1rem 2rem; background: #1a1000; border-radius: 12px; border: 1px solid #f59e0b20; cursor: pointer; transition: all 0.3s; }
+    .cat:hover { background: #f59e0b; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #f59e0b15; opacity: 0.5; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{SHOP_NAME}}</div>
+      <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="cart-btn">Cart ({{CART_COUNT}})</button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+    <p>{{DESCRIPTION}}</p>
+    <a href="#products" class="btn">{{CTA_BUTTON}}</a>
+  </section>
+
+  <section class="products" id="products">
+    <h2>{{PRODUCTS_TITLE}}</h2>
+    <div class="products-grid">
+      <div class="product">
+        <div class="product-img">{{PRODUCT_1_IMAGE}}</div>
+        <div class="product-info">
+          <h3>{{PRODUCT_1_NAME}}</h3>
+          <div class="price">{{PRODUCT_1_PRICE}}</div>
+          <button class="add-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">{{PRODUCT_2_IMAGE}}</div>
+        <div class="product-info">
+          <h3>{{PRODUCT_2_NAME}}</h3>
+          <div class="price">{{PRODUCT_2_PRICE}}</div>
+          <button class="add-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">{{PRODUCT_3_IMAGE}}</div>
+        <div class="product-info">
+          <h3>{{PRODUCT_3_NAME}}</h3>
+          <div class="price">{{PRODUCT_3_PRICE}}</div>
+          <button class="add-cart">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-img">{{PRODUCT_4_IMAGE}}</div>
+        <div class="product-info">
+          <h3>{{PRODUCT_4_NAME}}</h3>
+          <div class="price">{{PRODUCT_4_PRICE}}</div>
+          <button class="add-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <h2>{{CATEGORIES_TITLE}}</h2>
+    <div class="cat-grid">
+      <span class="cat">{{CATEGORY_1}}</span>
+      <span class="cat">{{CATEGORY_2}}</span>
+      <span class="cat">{{CATEGORY_3}}</span>
+      <span class="cat">{{CATEGORY_4}}</span>
+      <span class="cat">{{CATEGORY_5}}</span>
+      <span class="cat">{{CATEGORY_6}}</span>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{SHOP_NAME}}</p>
+  </footer>
+</body>
+</html>

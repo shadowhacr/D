@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Entertainment</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0a1a; color: #fff; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0a0a1a, #12122a, #0a0a1a); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #6366f115, transparent 60%); }
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; margin-bottom: 1rem; text-shadow: 0 0 30px #6366f160; }
+    .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto 2rem; }
+    .btn { padding: 1rem 2.5rem; background: #6366f1; color: #fff; border: none; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 10px 40px #6366f150; }
+    .shows { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .shows h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    .shows-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .show { background: #12122a; border-radius: 20px; overflow: hidden; border: 1px solid #6366f115; transition: all 0.3s; }
+    .show:hover { transform: scale(1.03); border-color: #6366f150; }
+    .show-img { height: 300px; background: linear-gradient(135deg, #6366f140, #4f46e540); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .show-info { padding: 1.5rem; }
+    .show-info h3 { color: #818cf8; margin-bottom: 0.3rem; }
+    .show-info p { opacity: 0.6; font-size: 0.9rem; }
+    .show-tag { display: inline-block; padding: 0.2rem 0.8rem; background: #6366f120; border-radius: 20px; font-size: 0.75rem; color: #818cf8; margin-top: 0.5rem; }
+    .categories { padding: 4rem 2rem; background: #12122a; }
+    .categories h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .cat-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 800px; margin: 0 auto; }
+    .cat-item { padding: 1rem 2rem; background: #0a0a1a; border-radius: 12px; border: 1px solid #6366f120; cursor: pointer; transition: all 0.3s; }
+    .cat-item:hover { background: #6366f1; border-color: #6366f1; }
+    .newsletter { padding: 5rem 2rem; text-align: center; background: linear-gradient(135deg, #6366f1, #4f46e5); }
+    .newsletter h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .newsletter p { opacity: 0.9; margin-bottom: 2rem; }
+    .newsletter-form { display: flex; gap: 1rem; justify-content: center; max-width: 500px; margin: 0 auto; }
+    .newsletter-form input { flex: 1; padding: 1rem; border-radius: 10px; border: none; font-size: 1rem; }
+    .newsletter-form button { padding: 1rem 2rem; background: #0a0a1a; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #6366f115; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{HEADING}}</h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#shows" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="shows" id="shows">
+    <h2>{{SHOWS_TITLE}}</h2>
+    <div class="shows-grid">
+      <div class="show">
+        <div class="show-img">{{SHOW_1_IMAGE}}</div>
+        <div class="show-info">
+          <h3>{{SHOW_1_NAME}}</h3>
+          <p>{{SHOW_1_DESC}}</p>
+          <span class="show-tag">{{SHOW_1_TAG}}</span>
+        </div>
+      </div>
+      <div class="show">
+        <div class="show-img">{{SHOW_2_IMAGE}}</div>
+        <div class="show-info">
+          <h3>{{SHOW_2_NAME}}</h3>
+          <p>{{SHOW_2_DESC}}</p>
+          <span class="show-tag">{{SHOW_2_TAG}}</span>
+        </div>
+      </div>
+      <div class="show">
+        <div class="show-img">{{SHOW_3_IMAGE}}</div>
+        <div class="show-info">
+          <h3>{{SHOW_3_NAME}}</h3>
+          <p>{{SHOW_3_DESC}}</p>
+          <span class="show-tag">{{SHOW_3_TAG}}</span>
+        </div>
+      </div>
+      <div class="show">
+        <div class="show-img">{{SHOW_4_IMAGE}}</div>
+        <div class="show-info">
+          <h3>{{SHOW_4_NAME}}</h3>
+          <p>{{SHOW_4_DESC}}</p>
+          <span class="show-tag">{{SHOW_4_TAG}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>{{CATEGORIES_TITLE}}</h2>
+    <div class="cat-list">
+      <span class="cat-item">{{CATEGORY_1}}</span>
+      <span class="cat-item">{{CATEGORY_2}}</span>
+      <span class="cat-item">{{CATEGORY_3}}</span>
+      <span class="cat-item">{{CATEGORY_4}}</span>
+      <span class="cat-item">{{CATEGORY_5}}</span>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>{{NEWSLETTER_TITLE}}</h2>
+    <p>{{NEWSLETTER_DESC}}</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND}}</p>
+  </footer>
+</body>
+</html>

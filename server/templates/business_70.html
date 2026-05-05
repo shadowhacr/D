@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Business Solutions</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; color: #1a1a2e; }
+    .header { background: #fff; border-bottom: 1px solid #22c55e20; padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 800; color: #22c55e; }
+    .nav { display: flex; gap: 2rem; list-style: none; }
+    .nav a { text-decoration: none; color: inherit; opacity: 0.7; transition: all 0.3s; font-weight: 500; }
+    .nav a:hover { opacity: 1; color: #22c55e; }
+    .hero { padding: 6rem 2rem;  }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero h1 span { color: #22c55e; }
+    .hero p { font-size: 1.1rem; opacity: 0.8; line-height: 1.7; margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: 0.9rem 2rem; background: #22c55e; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; border: none; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px #22c55e40; }
+    .btn-outline { background: transparent; border: 2px solid #22c55e; color: #22c55e; margin-left: 1rem; }
+    .hero-visual { display: flex; align-items: center; justify-content: center; min-height: 300px; background: #22c55e10; border-radius: 20px; border: 1px solid #22c55e20; font-size: 5rem; }
+    .services { padding: 5rem 2rem;  }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+    .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .section-header p { opacity: 0.7; }
+    .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .service-card { padding: 2.5rem; border-radius: 16px; background: #f8f9fa; border: 1px solid #22c55e15; transition: all 0.3s; }
+    .service-card:hover { transform: translateY(-5px); border-color: #22c55e40; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+    .service-icon { width: 60px; height: 60px; background: #22c55e15; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.5rem; color: #22c55e; }
+    .service-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .service-card p { opacity: 0.7; line-height: 1.6; }
+    .about { padding: 5rem 2rem; }
+    .about-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-img { min-height: 350px; background: #16a34a10; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 5rem; border: 1px solid #16a34a20; }
+    .about h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .about h2 span { color: #22c55e; }
+    .about p { opacity: 0.8; line-height: 1.7; margin-bottom: 1rem; }
+    .about ul { list-style: none; }
+    .about ul li { padding: 0.5rem 0; opacity: 0.8; }
+    .about ul li:before { content: '\2713 '; color: #22c55e; font-weight: bold; margin-right: 0.5rem; }
+    .testimonials { padding: 5rem 2rem; background: #f8f9fa; }
+    .testimonials-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .testimonial { padding: 2rem; border-radius: 16px; background: #fff; border: 1px solid #22c55e15; }
+    .testimonial-text { font-style: italic; opacity: 0.8; line-height: 1.6; margin-bottom: 1rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+    .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; background: #22c55e; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; }
+    .testimonial-name { font-weight: 600; }
+    .testimonial-role { font-size: 0.85rem; opacity: 0.6; }
+    .cta { padding: 5rem 2rem; text-align: center; background: #22c55e; }
+    .cta h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+    .cta p { color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta .btn { background: #fff; color: #22c55e; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #22c55e15; }
+    .footer p { opacity: 0.5; }
+    @media (max-width: 768px) { .hero-inner, .about-inner { grid-template-columns: 1fr; } .nav { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{COMPANY_NAME}}</div>
+      <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+        <p>{{DESCRIPTION}}</p>
+        <a href="#services" class="btn">{{CTA_PRIMARY}}</a>
+        <a href="#contact" class="btn btn-outline">{{CTA_SECONDARY}}</a>
+      </div>
+      <div class="hero-visual">{{HERO_IMAGE}}</div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <h2>{{SERVICES_TITLE}}</h2>
+      <p>{{SERVICES_SUBTITLE}}</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">{{SERVICE_1_ICON}}</div>
+        <h3>{{SERVICE_1_TITLE}}</h3>
+        <p>{{SERVICE_1_DESC}}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">{{SERVICE_2_ICON}}</div>
+        <h3>{{SERVICE_2_TITLE}}</h3>
+        <p>{{SERVICE_2_DESC}}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">{{SERVICE_3_ICON}}</div>
+        <h3>{{SERVICE_3_TITLE}}</h3>
+        <p>{{SERVICE_3_DESC}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-img">{{ABOUT_IMAGE}}</div>
+      <div>
+        <h2>{{ABOUT_TITLE}} <span>{{ABOUT_HIGHLIGHT}}</span></h2>
+        <p>{{ABOUT_PARA_1}}</p>
+        <p>{{ABOUT_PARA_2}}</p>
+        <ul>
+          <li>{{ABOUT_POINT_1}}</li>
+          <li>{{ABOUT_POINT_2}}</li>
+          <li>{{ABOUT_POINT_3}}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="section-header">
+      <h2>{{TESTIMONIALS_TITLE}}</h2>
+      <p>{{TESTIMONIALS_SUBTITLE}}</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">"{{REVIEW_1_TEXT}}"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">{{REVIEW_1_INITIAL}}</div>
+          <div><div class="testimonial-name">{{REVIEW_1_NAME}}</div><div class="testimonial-role">{{REVIEW_1_ROLE}}</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"{{REVIEW_2_TEXT}}"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">{{REVIEW_2_INITIAL}}</div>
+          <div><div class="testimonial-name">{{REVIEW_2_NAME}}</div><div class="testimonial-role">{{REVIEW_2_ROLE}}</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"{{REVIEW_3_TEXT}}"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">{{REVIEW_3_INITIAL}}</div>
+          <div><div class="testimonial-name">{{REVIEW_3_NAME}}</div><div class="testimonial-role">{{REVIEW_3_ROLE}}</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>{{CTA_TITLE}}</h2>
+    <p>{{CTA_DESCRIPTION}}</p>
+    <a href="mailto:{{CONTACT_EMAIL}}" class="btn">{{CTA_BUTTON}}</a>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | {{COMPANY_NAME}} &copy; {{YEAR}}</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Health & Fitness</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a1a00; color: #fff; }
+    .header { background: #102a00; padding: 1rem 2rem; border-bottom: 1px solid #84cc1620; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: 800; color: #84cc16; }
+    .nav { display: flex; gap: 2rem; list-style: none; }
+    .nav a { color: #fff; text-decoration: none; opacity: 0.8; }
+    .nav a:hover { color: #a3e635; }
+    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; background: linear-gradient(135deg, #0a1a00, #102a00); text-align: center; }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #a3e635; }
+    .hero p { opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+    .btn { padding: 1rem 2.5rem; background: #84cc16; color: #fff; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px #84cc1640; }
+    .programs { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .programs h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .program { background: #102a00; border-radius: 20px; overflow: hidden; border: 1px solid #84cc1615; transition: all 0.3s; }
+    .program:hover { transform: translateY(-5px); border-color: #84cc1640; }
+    .program-img { height: 180px; background: linear-gradient(135deg, #84cc1630, #a3e63530); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .program-info { padding: 1.5rem; }
+    .program-info h3 { color: #a3e635; margin-bottom: 0.5rem; }
+    .program-info p { opacity: 0.7; font-size: 0.9rem; }
+    .program-meta { display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem; opacity: 0.6; }
+    .stats { padding: 4rem 2rem; background: #102a00; display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 3rem; font-weight: 900; color: #a3e635; }
+    .stat-label { opacity: 0.6; }
+    .tips { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+    .tips h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .tip { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; padding: 1.5rem; background: #102a00; border-radius: 16px; border: 1px solid #84cc1615; }
+    .tip-num { width: 50px; height: 50px; background: #84cc16; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+    .tip h4 { color: #a3e635; margin-bottom: 0.3rem; }
+    .tip p { opacity: 0.7; font-size: 0.9rem; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #84cc1615; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">{{BRAND_NAME}}</div>
+      <ul class="nav">
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#programs" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><div class="stat-num">{{STAT_1_VALUE}}</div><div class="stat-label">{{STAT_1_LABEL}}</div></div>
+    <div class="stat"><div class="stat-num">{{STAT_2_VALUE}}</div><div class="stat-label">{{STAT_2_LABEL}}</div></div>
+    <div class="stat"><div class="stat-num">{{STAT_3_VALUE}}</div><div class="stat-label">{{STAT_3_LABEL}}</div></div>
+  </section>
+
+  <section class="programs" id="programs">
+    <h2>{{PROGRAMS_TITLE}}</h2>
+    <div class="programs-grid">
+      <div class="program">
+        <div class="program-img">{{PROGRAM_1_IMAGE}}</div>
+        <div class="program-info">
+          <h3>{{PROGRAM_1_NAME}}</h3>
+          <p>{{PROGRAM_1_DESC}}</p>
+          <div class="program-meta"><span>{{PROGRAM_1_DURATION}}</span><span>{{PROGRAM_1_LEVEL}}</span></div>
+        </div>
+      </div>
+      <div class="program">
+        <div class="program-img">{{PROGRAM_2_IMAGE}}</div>
+        <div class="program-info">
+          <h3>{{PROGRAM_2_NAME}}</h3>
+          <p>{{PROGRAM_2_DESC}}</p>
+          <div class="program-meta"><span>{{PROGRAM_2_DURATION}}</span><span>{{PROGRAM_2_LEVEL}}</span></div>
+        </div>
+      </div>
+      <div class="program">
+        <div class="program-img">{{PROGRAM_3_IMAGE}}</div>
+        <div class="program-info">
+          <h3>{{PROGRAM_3_NAME}}</h3>
+          <p>{{PROGRAM_3_DESC}}</p>
+          <div class="program-meta"><span>{{PROGRAM_3_DURATION}}</span><span>{{PROGRAM_3_LEVEL}}</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tips" id="tips">
+    <h2>{{TIPS_TITLE}}</h2>
+    <div class="tip">
+      <div class="tip-num">1</div>
+      <div><h4>{{TIP_1_TITLE}}</h4><p>{{TIP_1_DESC}}</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-num">2</div>
+      <div><h4>{{TIP_2_TITLE}}</h4><p>{{TIP_2_DESC}}</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-num">3</div>
+      <div><h4>{{TIP_3_TITLE}}</h4><p>{{TIP_3_DESC}}</p></div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND_NAME}}</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Music</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0a0a0f; color: #fff; }
+    .hero { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, #0a0a0f, #141420, #0a0a0f); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, #64748b15, transparent); top: -100px; left: -100px; border-radius: 50%; animation: pulse 4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:0.5} 50%{transform:scale(1.2);opacity:1} }
+    .hero-content { position: relative; z-index: 2; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .hero h1 span { color: #94a3b8; }
+    .hero p { opacity: 0.8; max-width: 500px; margin: 0 auto 2rem; }
+    .btn { padding: 1rem 2.5rem; background: #64748b; color: #fff; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px #64748b40; }
+    .player { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+    .player-box { background: #141420; border-radius: 24px; padding: 3rem; border: 1px solid #64748b15; }
+    .now-playing { display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+    .album-art { width: 150px; height: 150px; background: linear-gradient(135deg, #64748b, #94a3b8); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 3rem; flex-shrink: 0; }
+    .track-info h3 { font-size: 1.5rem; color: #94a3b8; }
+    .track-info p { opacity: 0.6; }
+    .progress { height: 6px; background: #0a0a0f; border-radius: 3px; margin: 1.5rem 0; overflow: hidden; }
+    .progress-bar { height: 100%; width: 60%; background: #64748b; border-radius: 3px; }
+    .controls { display: flex; justify-content: center; align-items: center; gap: 2rem; }
+    .control-btn { width: 50px; height: 50px; border-radius: 50%; background: #64748b20; border: 1px solid #64748b30; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; transition: all 0.3s; }
+    .control-btn:hover { background: #64748b; }
+    .control-btn.play { width: 60px; height: 60px; background: #64748b; font-size: 1.5rem; }
+    .playlist { padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
+    .playlist h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    .track { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #141420; border-radius: 12px; margin-bottom: 0.8rem; border: 1px solid #64748b10; transition: all 0.3s; }
+    .track:hover { border-color: #64748b30; }
+    .track-num { width: 40px; text-align: center; opacity: 0.5; }
+    .track-name { flex: 1; }
+    .track-artist { opacity: 0.6; font-size: 0.9rem; }
+    .track-duration { opacity: 0.5; font-size: 0.85rem; }
+    .footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid #64748b15; opacity: 0.5; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{HEADING}} <span>{{HEADING_HIGHLIGHT}}</span></h1>
+      <p>{{DESCRIPTION}}</p>
+      <a href="#player" class="btn">{{CTA_BUTTON}}</a>
+    </div>
+  </section>
+
+  <section class="player" id="player">
+    <div class="player-box">
+      <div class="now-playing">
+        <div class="album-art">{{ALBUM_IMAGE}}</div>
+        <div class="track-info">
+          <h3>{{TRACK_NAME}}</h3>
+          <p>{{ARTIST_NAME}}</p>
+        </div>
+      </div>
+      <div class="progress"><div class="progress-bar"></div></div>
+      <div class="controls">
+        <button class="control-btn">&#9198;</button>
+        <button class="control-btn play">&#9654;</button>
+        <button class="control-btn">&#9197;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="playlist">
+    <h2>{{PLAYLIST_TITLE}}</h2>
+    <div class="track">
+      <span class="track-num">1</span>
+      <span class="track-name">{{TRACK_1_NAME}}</span>
+      <span class="track-artist">{{TRACK_1_ARTIST}}</span>
+      <span class="track-duration">{{TRACK_1_DURATION}}</span>
+    </div>
+    <div class="track">
+      <span class="track-num">2</span>
+      <span class="track-name">{{TRACK_2_NAME}}</span>
+      <span class="track-artist">{{TRACK_2_ARTIST}}</span>
+      <span class="track-duration">{{TRACK_2_DURATION}}</span>
+    </div>
+    <div class="track">
+      <span class="track-num">3</span>
+      <span class="track-name">{{TRACK_3_NAME}}</span>
+      <span class="track-artist">{{TRACK_3_ARTIST}}</span>
+      <span class="track-duration">{{TRACK_3_DURATION}}</span>
+    </div>
+    <div class="track">
+      <span class="track-num">4</span>
+      <span class="track-name">{{TRACK_4_NAME}}</span>
+      <span class="track-artist">{{TRACK_4_ARTIST}}</span>
+      <span class="track-duration">{{TRACK_4_DURATION}}</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>{{FOOTER_TEXT}} | &copy; {{YEAR}} {{BRAND}}</p>
+  </footer>
+</body>
+</html>
